@@ -64,9 +64,8 @@ Below are key screenshots demonstrating NebulaEdit's features and user interface
 |------------|-------------|
 | ![Homepage](Images/homepage.jpg) | Landing page introducing NebulaEdit and its capabilities. |
 | ![Drop Image](Images/dropurimage.jpg) | Image upload screen where users can drag and drop or browse for images to edit. |
-| ![Choose Edit Type](Images/chooseedittype.jpg) | Menu for selecting the type of AI-powered edit: AI Edit, Fusion, Relight, Upscale, or MagicQuill. |
-| ![Editing Features](Images/edittingfeatures.jpg) | The main editing interface showing available tools such as draw, erase, and text. |
-| ![Tools](Images/tools.jpg) | Radial tool menu for quick access to core editing features. |
+| ![Choose Edit Type](Images/chooseedittype.jpg) | Radial tool menu for quick access to core editing features. |
+| ![Editing Features](Images/tools.jpg) | The main editing interface showing available tools such as draw, erase, and text. |
 | ![Entering Prompt](Images/enteringprompt.jpg) | Example of entering a prompt for AI-driven image editing. |
 | ![Processing Edit](Images/processingedit.jpg) | Progress screen while the AI processes the requested edit. |
 | ![Before Relight](Images/beforerelight.jpg) | Original image before applying the relighting feature. |
