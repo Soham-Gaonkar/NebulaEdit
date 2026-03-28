@@ -1,35 +1,56 @@
-# Team 58 - Adobe
 
-**Task:** Adobe TechMeet - AI Image Editing & Generation
+# NebulaEdit
 
-This repository contains our submission for the Adobe TechMeet challenge. We've built a dual-component system to bring professional-grade AI editing tools to the web.
+**Adobe TechMeet Submission – AI Image Editing & Generation**
 
-## Task 1: Wireframe and Design Rationale
+This repository contains our solution for the Adobe TechMeet challenge: a dual-component system delivering professional-grade AI image editing and generation tools on the web.
 
-We chose a decoupled architecture to keep the UI snappy while the backend handles heavy inference. The goal was to hide the complexity of ComfyUI nodes behind a familiar, layer-based editing interface.
+---
 
-* [**View Wireframes**](./Wireframes-UI/)
-* [**Design Rationale**](./Design-Rationale.pdf)
+## Table of Contents
 
-## Task 2: Market Research
+- [NebulaEdit](#nebulaedit)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Wireframes \& Design Rationale](#wireframes--design-rationale)
+  - [Market Research](#market-research)
+  - [Demo Video](#demo-video)
+  - [Execution Overview](#execution-overview)
+  - [Components](#components)
+  - [Setup Instructions](#setup-instructions)
 
-Existing tools often sacrifice control for ease of use. Our solution targets creators who need specific, localized edits (like relighting a subject or fusing elements) rather than just random image generation.
+---
 
-* [**View Market Research**](./Market-Research.pdf)
+## Overview
+NebulaEdit is designed with a decoupled architecture: a fast, interactive frontend and a robust backend for heavy AI inference. The system hides the complexity of ComfyUI nodes behind a familiar, layer-based editing interface.
 
-## Task 3 : Implementation
+---
 
-* [**View Demo Video**](./Demo.mp4)
+## Wireframes & Design Rationale
+- [**View Wireframes**](./Wireframes-UI/)
+- [**Design Rationale**](./Design-Rationale.pdf)
+
+## Market Research
+Our research highlights that most existing tools trade off control for simplicity. NebulaEdit targets creators who need precise, localized edits (e.g., relighting, element fusion) rather than generic image generation.
+- [**Market Research Report**](./Market-Research.pdf)
+- [**Demo Video: Market Research & Features**](./Demo.mp4)
+
+## Demo Video
+- [**Watch the Demo**](./Demo.mp4)
+
+## Execution Overview
+For a detailed look at the system architecture and execution pipeline, see:
+- [**Execution Overview & Pipeline**](./Execution-overview.md)
+
+---
 
 ## Components
 
-* [**`galaxy-canvas-ai/`**](./galaxy-canvas-ai/)
-  The frontend interface built with React and Vite. It provides the canvas, toolbars, and interaction logic for features like MagicQuill and Image Fusion.
+- [**`galaxy-canvas-ai/`**](./galaxy-canvas-ai/): React + Vite frontend. Provides the canvas, toolbars, and interaction logic for features like MagicQuill and Image Fusion.
+- [**`nebula-server/`**](./nebula-server/): Python/FastAPI backend. Bridges to ComfyUI, managing complex node workflows for AI features (Qwen-Image-Edit, Relighting, etc.).
+- [**`setup.sh`**](./setup.sh): Deployment script for the server. Installs ComfyUI, Python venv, and fetches all required model weights from Hugging Face.
 
-* [**`nebula-server/`**](./nebula-server/)
-  The Python/FastAPI backend. It acts as a bridge to ComfyUI, managing the complex node workflows required for our AI features (Qwen-Image-Edit, Relighting, etc.).
+---
 
-* [**`setup.sh`**](./setup.sh)
-  Deployment script for the server. It automates the installation of ComfyUI, Python venv, and fetches all required model weights from Hugging Face.
-
-  Check `setup_instructions.md` for detailed setup steps.
+## Setup Instructions
+See [setup_instructions.md](./setup_instructions.md) for detailed setup and deployment steps.
