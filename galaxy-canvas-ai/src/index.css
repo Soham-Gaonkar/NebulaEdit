@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark Galaxy Theme */
+    --background: 240 20% 4%;
+    --foreground: 210 40% 96%;
+
+    --card: 240 15% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 240 15% 6%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 280 100% 70%;
+    --primary-foreground: 240 20% 4%;
+
+    --secondary: 200 100% 50%;
+    --secondary-foreground: 240 20% 4%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 240 20% 4%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 10% 18%;
+    --input: 240 10% 12%;
+    --ring: 280 100% 70%;
+
+    --radius: 0.75rem;
+
+    /* Custom Galaxy Colors */
+    --nebula-pink: 320 80% 60%;
+    --nebula-purple: 280 70% 50%;
+    --star-cyan: 180 100% 60%;
+    --star-blue: 210 100% 60%;
+    --cosmic-dark: 240 20% 6%;
+    --glass: 240 15% 10%;
+
+    /* Gradients */
+    --gradient-nebula: linear-gradient(135deg, hsl(var(--nebula-purple)) 0%, hsl(var(--nebula-pink)) 50%, hsl(var(--star-cyan)) 100%);
+    --gradient-cosmic: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--cosmic-dark)) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(var(--primary) / 0.3) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+    --shadow-cyan: 0 0 30px hsl(var(--accent) / 0.5);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+
+    --sidebar-background: 240 15% 6%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 280 100% 70%;
+    --sidebar-primary-foreground: 240 20% 4%;
+    --sidebar-accent: 240 10% 12%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 240 10% 15%;
+    --sidebar-ring: 280 100% 70%;
+  }
+
+  .dark {
+    --background: 240 20% 4%;
+    --foreground: 210 40% 96%;
+    --card: 240 15% 8%;
+    --card-foreground: 210 40% 96%;
+    --popover: 240 15% 6%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 280 100% 70%;
+    --primary-foreground: 240 20% 4%;
+    --secondary: 200 100% 50%;
+    --secondary-foreground: 240 20% 4%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 240 20% 4%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 240 10% 18%;
+    --input: 240 10% 12%;
+    --ring: 280 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.8), 0 0 40px hsl(var(--primary) / 0.4);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3), inset 0 0 20px hsl(var(--primary) / 0.1);
+  }
+
+  .star-field {
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsl(var(--star-cyan)), transparent),
+      radial-gradient(2px 2px at 40px 70px, hsl(var(--foreground) / 0.8), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--star-blue)), transparent),
+      radial-gradient(2px 2px at 130px 80px, hsl(var(--nebula-pink)), transparent),
+      radial-gradient(1px 1px at 160px 120px, hsl(var(--foreground) / 0.6), transparent);
+    background-size: 200px 150px;
+    background-repeat: repeat;
+  }
+
+  .nebula-bg {
+    background: 
+      radial-gradient(ellipse 80% 50% at 20% 40%, hsl(var(--nebula-purple) / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 60%, hsl(var(--nebula-pink) / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 30% at 50% 80%, hsl(var(--star-cyan) / 0.08) 0%, transparent 50%);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-nebula);
+  }
+
+  .btn-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .btn-glow::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: var(--gradient-nebula);
+    filter: blur(20px);
+  }
+
+  .btn-glow:hover::before {
+    @apply opacity-50;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  .animate-star-twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+    opacity: 1;
+  }
+  50% { 
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.8);
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.4s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

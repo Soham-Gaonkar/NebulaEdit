@@ -1,0 +1,66 @@
+{
+  "2": {
+    "inputs": {
+      "image": "clipspace/clipspace-mask-MagicQuill_-1.png [input]",
+      "original_image": "original_MagicQuill_-1.png [input]",
+      "add_color_image": "add_color_MagicQuill_-1.png [input]",
+      "add_edge_image": "add_edge_MagicQuill_-1.png [input]",
+      "remove_edge_image": "remove_edge_MagicQuill_-1.png [input]",
+      "base_model_version": "SD1.5",
+      "positive_prompt": "Remove all the text here",
+      "negative_prompt": "",
+      "dtype": "float16",
+      "stroke_as_edge": "enable",
+      "fine_edge": "disable",
+      "grow_size": 15,
+      "edge_strength": 0.5,
+      "color_strength": 0.5,
+      "inpaint_strength": 1,
+      "seed": 700313758596055,
+      "steps": 20,
+      "cfg": 4,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "exponential",
+      "Setting": "collapse_setting",
+      "wMagicQuill_-1.png": null,
+      "model": [
+        "3",
+        0
+      ],
+      "clip": [
+        "3",
+        1
+      ],
+      "vae": [
+        "3",
+        2
+      ]
+    },
+    "class_type": "MagicQuill",
+    "_meta": {
+      "title": "MagicQuill"
+    }
+  },
+  "3": {
+    "inputs": {
+      "ckpt_name": "SD15realisticVisionV60B1_v51VAE.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "4": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}
